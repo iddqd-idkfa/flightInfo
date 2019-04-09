@@ -54,7 +54,7 @@ public class FlightsApplicationTests {
 	public void shouldReturn200WhenSendingRequestToController() throws Exception {
 		@SuppressWarnings("rawtypes")
 		ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
-				"http://localhost:" + this.port + "/flightInfo-world", Map.class);
+				"http://localhost:" + this.port + "/flights", Map.class);
 
 		then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
 	}
