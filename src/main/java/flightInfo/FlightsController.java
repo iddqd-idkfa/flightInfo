@@ -73,6 +73,10 @@ public class FlightsController {
                           @RequestParam(name = "sort", required = false, defaultValue = "") String sort) {
         boolean ascending;
         Comparator<Flight> comparator = null;
+        if (page <0) {
+            prevSort="";
+        }
+
         try {
             if (sort != null && !sort.isEmpty()) {
                 if (sort.charAt(0) == '-') {
